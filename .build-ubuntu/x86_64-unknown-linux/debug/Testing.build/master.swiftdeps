@@ -1,0 +1,6 @@
+version: "Swift version 4.0 (swift-4.0-RELEASE)"
+options: "0a86a1d0c68763c1ce5c0a1d9bd0ce14"
+build_time: [1508208555, 627155756]
+inputs:
+  "/Testing/Sources/Testing/main.swift": [1508208344, 0]
+  "/Testing/Sources/Testing/Testing.swift": [1508206423, 0]

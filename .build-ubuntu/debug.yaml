@@ -1,0 +1,100 @@
+client:
+  name: swift-build
+tools: {}
+targets:
+  "main": ["<Testing.module>","<Testing.exe>"]
+  "test": ["<Testing.module>","<TestingPackageTests.module>","<TestingTests.module>","<TestingPackageTests.test>","<Testing.exe>"]
+  "Testing.module": ["<Testing.module>"]
+  "TestingPackageTests.module": ["<TestingPackageTests.module>"]
+  "TestingTests.module": ["<TestingTests.module>"]
+  "TestingPackageTests.test": ["<TestingPackageTests.test>"]
+  "Testing.exe": ["<Testing.exe>"]
+default: "main"
+commands: 
+  "<C.Testing.exe>":
+    tool: phony
+    inputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing"]
+    outputs: ["<Testing.exe>"]
+
+  "<C.Testing.module>":
+    tool: phony
+    inputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.swiftmodule"]
+    outputs: ["<Testing.module>"]
+
+  "<C.TestingPackageTests.module>":
+    tool: phony
+    inputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.swiftmodule"]
+    outputs: ["<TestingPackageTests.module>"]
+
+  "<C.TestingPackageTests.test>":
+    tool: phony
+    inputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.xctest"]
+    outputs: ["<TestingPackageTests.test>"]
+
+  "<C.TestingTests.module>":
+    tool: phony
+    inputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingTests.swiftmodule"]
+    outputs: ["<TestingTests.module>"]
+
+  "C.Testing.exe":
+    tool: shell
+    description: "Linking ./.build-ubuntu/x86_64-unknown-linux/debug/Testing"
+    inputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/main.swift.o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/Testing.swift.o"]
+    outputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing"]
+    args: ["/usr/bin/swiftc","-target","x86_64-unknown-linux","-sdk","/","-g","-L","/Testing/.build-ubuntu/x86_64-unknown-linux/debug","-o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing","-module-name","Testing","-emit-executable","-Xlinker","-rpath=$ORIGIN","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/main.swift.o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/Testing.swift.o"]
+
+  "C.Testing.module":
+    tool: swift-compiler
+    executable: "/usr/bin/swiftc"
+    module-name: "Testing"
+    module-output-path: "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.swiftmodule"
+    inputs: ["/Testing/Sources/Testing/main.swift","/Testing/Sources/Testing/Testing.swift"]
+    outputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/main.swift.o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/Testing.swift.o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.swiftmodule"]
+    import-paths: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug"]
+    temps-path: "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build"
+    objects: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/main.swift.o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/Testing.swift.o"]
+    other-args: ["-swift-version","4","-target","x86_64-unknown-linux","-sdk","/","-Onone","-g","-enable-testing","-j8","-DSWIFT_PACKAGE","-module-cache-path","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/ModuleCache"]
+    sources: ["/Testing/Sources/Testing/main.swift","/Testing/Sources/Testing/Testing.swift"]
+    is-library: false
+    enable-whole-module-optimization: false
+    num-threads: "8"
+
+  "C.TestingPackageTests.module":
+    tool: swift-compiler
+    executable: "/usr/bin/swiftc"
+    module-name: "TestingPackageTests"
+    module-output-path: "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.swiftmodule"
+    inputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingTests.swiftmodule","/Testing/Tests/LinuxMain.swift"]
+    outputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.build/LinuxMain.swift.o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.swiftmodule"]
+    import-paths: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug"]
+    temps-path: "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.build"
+    objects: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.build/LinuxMain.swift.o"]
+    other-args: ["-swift-version","4","-target","x86_64-unknown-linux","-sdk","/","-Onone","-g","-enable-testing","-j8","-DSWIFT_PACKAGE","-module-cache-path","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/ModuleCache"]
+    sources: ["/Testing/Tests/LinuxMain.swift"]
+    is-library: false
+    enable-whole-module-optimization: false
+    num-threads: "8"
+
+  "C.TestingPackageTests.test":
+    tool: shell
+    description: "Linking ./.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.xctest"
+    inputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.build/LinuxMain.swift.o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingTests.build/TestingTests.swift.o"]
+    outputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.xctest"]
+    args: ["/usr/bin/swiftc","-target","x86_64-unknown-linux","-sdk","/","-g","-L","/Testing/.build-ubuntu/x86_64-unknown-linux/debug","-o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.xctest","-module-name","TestingPackageTests","-emit-executable","-Xlinker","-rpath=$ORIGIN","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingPackageTests.build/LinuxMain.swift.o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingTests.build/TestingTests.swift.o"]
+
+  "C.TestingTests.module":
+    tool: swift-compiler
+    executable: "/usr/bin/swiftc"
+    module-name: "TestingTests"
+    module-output-path: "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingTests.swiftmodule"
+    inputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.swiftmodule","/Testing/Tests/TestingTests/TestingTests.swift"]
+    outputs: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingTests.build/TestingTests.swift.o","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingTests.swiftmodule"]
+    import-paths: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug"]
+    temps-path: "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingTests.build"
+    objects: ["/Testing/.build-ubuntu/x86_64-unknown-linux/debug/TestingTests.build/TestingTests.swift.o"]
+    other-args: ["-swift-version","4","-target","x86_64-unknown-linux","-sdk","/","-Onone","-g","-enable-testing","-j8","-DSWIFT_PACKAGE","-module-cache-path","/Testing/.build-ubuntu/x86_64-unknown-linux/debug/ModuleCache"]
+    sources: ["/Testing/Tests/TestingTests/TestingTests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: "8"
+

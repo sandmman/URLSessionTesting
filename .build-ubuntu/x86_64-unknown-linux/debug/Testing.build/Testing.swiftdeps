@@ -1,0 +1,111 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "RestRequest"
+provides-nominal:
+- "7Testing11RestRequestC"
+provides-member:
+- ["7Testing11RestRequestC", ""]
+depends-top-level:
+- "AssignmentPrecedence"
+- "Error"
+- "RestRequest"
+- "String"
+- "URL"
+- !private "URLRequest"
+- "URLResponse"
+- "URLSession"
+- "URLSessionConfiguration"
+- "Void"
+depends-member:
+- ["s28CustomDebugStringConvertibleP", "default"]
+- !private ["s28CustomDebugStringConvertibleP", "downloadTask"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "resume"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- ["s23CustomStringConvertibleP", "default"]
+- !private ["s23CustomStringConvertibleP", "downloadTask"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "resume"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "init"]
+- ["s9EquatableP", "default"]
+- !private ["s9EquatableP", "downloadTask"]
+- ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "resume"]
+- ["s8HashableP", "default"]
+- !private ["s8HashableP", "downloadTask"]
+- ["s8HashableP", "init"]
+- !private ["s8HashableP", "resume"]
+- ["10Foundation9NSCopyingP", "default"]
+- !private ["10Foundation9NSCopyingP", "resume"]
+- ["10Foundation8NSObjectC", "default"]
+- !private ["10Foundation8NSObjectC", "downloadTask"]
+- !private ["10Foundation8NSObjectC", "resume"]
+- ["10Foundation16NSObjectProtocolP", "default"]
+- !private ["10Foundation16NSObjectProtocolP", "downloadTask"]
+- ["10Foundation16NSObjectProtocolP", "init"]
+- !private ["10Foundation16NSObjectProtocolP", "resume"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- ["7Testing11RestRequestC", "Error"]
+- ["7Testing11RestRequestC", "String"]
+- ["7Testing11RestRequestC", "URL"]
+- !private ["7Testing11RestRequestC", "URLRequest"]
+- ["7Testing11RestRequestC", "URLResponse"]
+- ["7Testing11RestRequestC", "URLSession"]
+- ["7Testing11RestRequestC", "URLSessionConfiguration"]
+- ["7Testing11RestRequestC", "Void"]
+- ["7Testing11RestRequestC", "deinit"]
+- ["7Testing11RestRequestC", "download"]
+- ["7Testing11RestRequestC", "init"]
+- !private ["7Testing11RestRequestC", "session"]
+- !private ["7Testing11RestRequestC", "url"]
+- !private ["10Foundation3URLV", "init"]
+- !private ["10Foundation10URLRequestV", "init"]
+- !private ["10Foundation10URLSessionC", "downloadTask"]
+- ["10Foundation10URLSessionC", "init"]
+- ["10Foundation23URLSessionConfigurationC", "default"]
+- !private ["10Foundation22URLSessionDownloadTaskC", "resume"]
+- !private ["10Foundation18URLSessionProtocolP", "downloadTask"]
+- ["10Foundation18URLSessionProtocolP", "init"]
+- !private ["10Foundation14URLSessionTaskC", "resume"]
+- !private ["10Foundation13_CFBridgeableP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "init"]
+- !private ["10Foundation13_NSBridgeableP", "init"]
+- !private ["10Foundation17_ObjectBridgeableP", "init"]
+- !private ["10Foundation21_ObjectTypeBridgeableP", "init"]
+depends-nominal:
+- "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- "s9EquatableP"
+- "s8HashableP"
+- "10Foundation9NSCopyingP"
+- "10Foundation8NSObjectC"
+- "10Foundation16NSObjectProtocolP"
+- !private "10Foundation20ReferenceConvertibleP"
+- "7Testing11RestRequestC"
+- !private "10Foundation3URLV"
+- !private "10Foundation10URLRequestV"
+- "10Foundation10URLSessionC"
+- "10Foundation23URLSessionConfigurationC"
+- !private "10Foundation22URLSessionDownloadTaskC"
+- "10Foundation18URLSessionProtocolP"
+- !private "10Foundation14URLSessionTaskC"
+- !private "10Foundation13_CFBridgeableP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
+- !private "10Foundation13_NSBridgeableP"
+- !private "10Foundation17_ObjectBridgeableP"
+- !private "10Foundation21_ObjectTypeBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/usr/lib/swift/linux/x86_64/glibc.modulemap"
+interface-hash: "a1e7b3c7171ed87392c000d4fc0e1d27"

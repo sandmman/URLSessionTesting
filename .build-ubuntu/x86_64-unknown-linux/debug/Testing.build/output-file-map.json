@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/master.swiftdeps"
+  },
+  "/Testing/Sources/Testing/main.swift": {
+    "dependencies": "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/main.d",
+    "object": "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/main.swift.o",
+    "swiftmodule": "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/main.swiftdeps"
+  },
+  "/Testing/Sources/Testing/Testing.swift": {
+    "dependencies": "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/Testing.d",
+    "object": "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/Testing.swift.o",
+    "swiftmodule": "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/Testing~partial.swiftmodule",
+    "swift-dependencies": "/Testing/.build-ubuntu/x86_64-unknown-linux/debug/Testing.build/Testing.swiftdeps"
+  }
+}

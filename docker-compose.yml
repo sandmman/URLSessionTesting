@@ -1,0 +1,6 @@
+# docker-compose up
+app:
+  image: ibmcom/swift-ubuntu:4.0
+  volumes:
+    - .:/Testing
+  command: bash -c "cd /Testing && swift package --build-path .build-ubuntu clean && swift build --build-path .build-ubuntu && ./.build-ubuntu/x86_64-unknown-linux/debug/Testing"
